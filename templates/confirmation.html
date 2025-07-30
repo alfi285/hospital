@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+  Booking Confirmation
+{% endblock %}
+
+{% block content %}
+  <style>
+    h1.text-center {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3rem;
+      color: black;
+      margin-top: 2rem;
+      font-weight: normal;
+    }
+
+    .alert-info {
+      background-color: #e0f0ff;
+      color: #004080;
+      border: 1px solid #b3d9ff;
+      padding: 1.5rem;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 2rem auto;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    hr {
+      width: 50%;
+      margin: 1rem auto;
+      border-top: 2px solid #004080;
+      font-weight: normal;
+    }
+  </style>
+
+  <h1 class="text-center">Booking Confirmation</h1>
+  <hr>
+
+  <div class="alert alert-info text-center" role="alert">
+    We have received your appointment request. Our representative will call you soon.
+  </div>
+{% endblock %}

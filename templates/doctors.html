@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Doctors
+{% endblock %}
+
+{% block content %}
+  <style>
+    h1 {
+      text-align: center;
+    margin-top: 2rem;
+    color: #2c3e50;
+     font-weight: normal;
+    font-family: 'Dancing Script', cursive;
+    }
+      hr {
+    border: 1px solid #2c3e50;
+    width: 60%;
+    margin: 1rem auto;
+  }
+
+    .doctor-card {
+      width: 18rem;
+      margin: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      overflow: hidden;
+      background-color: #fff;
+    }
+
+    .doctor-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-bottom: 3px solid #ddd;
+      border-radius: 50%;
+      margin: 1rem auto 0;
+      display: block;
+      width: 150px;
+      height: 150px;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .doctor-card .card-body {
+      padding: 1rem;
+    }
+
+    .doctor-card h5 {
+      font-size: 1.3rem;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .doctor-card p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0.5rem 0;
+    }
+
+    .doctor-card h6 {
+      font-size: 0.95rem;
+      color: #0066cc;
+      font-weight: 600;
+    }
+
+    .container.bg-secondary {
+      background: #f0f8ff !important;
+      padding: 2rem;
+      border-radius: 20px;
+    }
+
+    .row.justify-content-center {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+
+  <h1>Our Doctors</h1>
+  <hr>
+
+  <div class="container text-center bg-secondary">
+    <div class="row justify-content-center">
+      {% for d in doctors %}
+        <div class="card doctor-card text-center">
+          <img src="{{ d.doc_image.url }}" alt="Doctor Image">
+          <div class="card-body">
+            <h5 class="card-title">Dr. {{ d.doc_name }}</h5>
+            <p class="card-text">{{ d.doc_spec }}</p>
+            <h6>{{ d.dep_name }} Department</h6>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock %}
